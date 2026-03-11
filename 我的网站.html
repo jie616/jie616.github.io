@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>我的作品集</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        .gradient-text { 
+            background: linear-gradient(135deg, #2563eb, #9333ea); 
+            -webkit-background-clip: text; 
+            -webkit-text-fill-color: transparent; 
+        }
+        .work-card { 
+            transition: all 0.3s; 
+            cursor: pointer;
+        }
+        .work-card:hover { 
+            transform: translateY(-8px); 
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1); 
+        }
+        .work-card img { 
+            transition: transform 0.5s; 
+        }
+        .work-card:hover img { 
+            transform: scale(1.1); 
+        }
+        /* 灯箱样式 */
+        .lightbox {
+            display: none;
+            position: fixed;
+            inset: 0;
+            background: rgba(0,0,0,0.95);
+            z-index: 100;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+        .lightbox.active { display: flex; }
+    </style>
+</head>
+<body class="bg-gray-50">
+
+    <!-- 顶部导航 -->
+    <header class="fixed top-0 w-full bg-white/90 backdrop-blur shadow-sm z-50">
+        <div class="max-w-7xl mx-auto px-4 py-4 flex justify-between items-center">
+            <span class="text-xl font-bold gradient-text">我的作品集</span>
+            <nav class="space-x-6">
+                <a href="#works" class="text-gray-700 hover:text-blue-600">作品</a>
+                <a href="#about" class="text-gray-700 hover:text-blue-600">关于</a>
+                <a href="#contact" class="text-gray-700 hover:text-blue-600">联系</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- 首页大图 -->
+    <section class="min-h-screen flex items-center justify-center bg-gradient-to-br from-blue-50 to-purple-50 pt-16">
+        <div class="text-center px-4">
+            <span class="inline-block px-4 py-2 bg-blue-100 text-blue-700 rounded-full text-sm mb-6">👋 欢迎来到我的作品集</span>
+            <h1 class="text-5xl md:text-7xl font-bold mb-4">我是 <span class="gradient-text">创作者</span></h1>
+            <p class="text-xl text-gray-600 mb-8">平面设计师 / UI设计师 / 摄影师</p>
+            <a href="#works" class="px-8 py-4 bg-blue-600 text-white rounded-full hover:bg-blue-700 transition">查看作品 ↓</a>
+        </div>
+    </section>
+
+    <!-- 作品展示 -->
+    <section id="works" class="py-20 px-4 max-w-7xl mx-auto">
+        <h2 class="text-4xl font-bold text-center mb-4 gradient-text">精选作品</h2>
+        <p class="text-gray-600 text-center mb-12">点击作品查看大图</p>
+        
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            
+            <!-- 作品 1 - 替换 ./images/work1.jpg 为你的照片 -->
+            <div class="work-card bg-white rounded-2xl overflow-hidden shadow-sm" onclick="openLightbox('./images/work1.jpg', '品牌视觉设计')">
+                <div class="h-64 overflow-hidden">
+                    <img src="./images/work1.jpg" alt="作品1" class="w-full h-full object-cover" onerror="this.src='https://via.placeholder.com/800x600?text=请放入照片work1.jpg'">
+                </div>
+                <div class="p-6">
+                    <span class="text-blue-600 text-sm font-medium">平面设计</span>
+                    <h3 class="text-xl font-bold mt-2 text-gray-800">品牌视觉设计</h3>
+                    <p class="text-gray-600 text-sm mt-2">企业VI设计全套方案</p>
+                </div>
+            </div>
+
+            <!-- 作品 2 -->
+            <div class="work-card bg-white rounded-2xl overflow-hidden shadow-sm" onclick="openLightbox('./images/work2.jpg', 'APP界面设计')">
+                <div class="h-64 overflow-hidden">
+                    <img src="./images/work2.jpg" alt="作品2" class="w-full h-full object-cover" onerror="this.src='https://via.placeholder.com/800x600?text=请放入照片work2.jpg'">
+                </div>
+                <div class="p-6">
+                    <span class="text-blue-600 text-sm font-medium">UI设计</span>
+                    <h3 class="text-xl font-bold mt-2 text-gray-800">APP界面设计</h3>
+                    <p class="text-gray-600 text-sm mt-2">移动端电商应用界面</p>
+                </div>
+            </div>
+
+            <!-- 作品 3 -->
+            <div class="work-card bg-white rounded-2xl overflow-hidden shadow-sm" onclick="openLightbox('./images/work3.jpg', '城市摄影')">
+                <div class="h-64 overflow-hidden">
+                    <img src="./images/work3.jpg" alt="作品3" class="w-full h-full object-cover" onerror="this.src='https://via.placeholder.com/800x600?text=请放入照片work3.jpg'">
+                </div>
+                <div class="p-6">
+                    <span class="text-blue-600 text-sm font-medium">摄影</span>
+                    <h3 class="text-xl font-bold mt-2 text-gray-800">城市摄影</h3>
+                    <p class="text-gray-600 text-sm mt-2">都市建筑风光记录</p>
+                </div>
+            </div>
+
+            <!-- 作品 4 -->
+            <div class="work-card bg-white rounded-2xl overflow-hidden shadow-sm" onclick="openLightbox('./images/work4.jpg', '包装设计')">
+                <div class="h-64 overflow-hidden">
+                    <img src="./images/work4.jpg" alt="作品4" class="w-full h-full object-cover" onerror="this.src='https://via.placeholder.com/800x600?text=请放入照片work4.jpg'">
+                </div>
+                <div class="p-6">
+                    <span class="text-blue-600 text-sm font-medium">包装设计</span>
+                    <h3 class="text-xl font-bold mt-2 text-gray-800">产品包装设计</h3>
+                    <p class="text-gray-600 text-sm mt-2">环保产品包装方案</p>
+                </div>
+            </div>
+
+            <!-- 作品 5 -->
+            <div class="work-card bg-white rounded-2xl overflow-hidden shadow-sm" onclick="openLightbox('./images/work5.jpg', '网页设计')">
+                <div class="h-64 overflow-hidden">
+                    <img src="./images/work5.jpg" alt="作品5" class="w-full h-full object-cover" onerror="this.src='https://via.placeholder.com/800x600?text=请放入照片work5.jpg'">
+                </div>
+                <div class="p-6">
+                    <span class="text-blue-600 text-sm font-medium">网页设计</span>
+                    <h3 class="text-xl font-bold mt-2 text-gray-800">企业官网设计</h3>
+                    <p class="text-gray-600 text-sm mt-2">响应式网站设计开发</p>
+                </div>
+            </div>
+
+            <!-- 作品 6 -->
+            <div class="work-card bg-white rounded-2xl overflow-hidden shadow-sm" onclick="openLightbox('./images/work6.jpg', '人像摄影')">
+                <div class="h-64 overflow-hidden">
+                    <img src="./images/work6.jpg" alt="作品6" class="w-full h-full object-cover" onerror="this.src='https://via.placeholder.com/800x600?text=请放入照片work6.jpg'">
+                </div>
+                <div class="p-6">
+                    <span class="text-blue-600 text-sm font-medium">摄影</span>
+                    <h3 class="text-xl font-bold mt-2 text-gray-800">人像摄影</h3>
+                    <p class="text-gray-600 text-sm mt-2">室内人像写真拍摄</p>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- 关于我 -->
+    <section id="about" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 text-center">
+            <h2 class="text-4xl font-bold mb-8 gradient-text">关于我</h2>
+            <div class="max-w-2xl mx-auto">
+                <p class="text-gray-600 text-lg leading-relaxed">
+                    我是一名热爱创意与设计的视觉创作者。多年来专注于平面设计、UI设计和摄影领域，
+                    致力于用视觉语言传递品牌价值。我相信好的设计不仅要美观，更要能够解决问题。
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- 联系我 -->
+    <section id="contact" class="py-20 bg-gray-900 text-white text-center">
+        <h2 class="text-4xl font-bold mb-4">联系我</h2>
+        <p class="text-gray-400 mb-8">有项目合作？欢迎随时联系</p>
+        <a href="mailto:hello@example.com" class="px-8 py-4 bg-blue-600 rounded-full hover:bg-blue-700 transition inline-block">发送邮件</a>
+        <p class="text-gray-500 mt-6 text-sm">邮箱: hello@example.com | 微信: your-wechat</p>
+    </section>
+
+    <!-- 灯箱（点击图片放大查看） -->
+    <div id="lightbox" class="lightbox" onclick="closeLightbox()">
+        <button class="absolute top-4 right-6 text-white text-5xl hover:text-gray-300">&times;</button>
+        <div class="max-w-5xl w-full px-4" onclick="event.stopPropagation()">
+            <img id="lightbox-img" src="" class="w-full rounded-lg shadow-2xl">
+            <p id="lightbox-title" class="text-white text-center mt-4 text-xl"></p>
+        </div>
+    </div>
+
+    <script>
+        // 灯箱功能
+        function openLightbox(src, title) {
+            document.getElementById('lightbox-img').src = src;
+            document.getElementById('lightbox-title').textContent = title;
+            document.getElementById('lightbox').classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+        function closeLightbox() {
+            document.getElementById('lightbox').classList.remove('active');
+            document.body.style.overflow = 'auto';
+        }
+        // ESC键关闭灯箱
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') closeLightbox();
+        });
+    </script>
+
+</body>
+</html>
