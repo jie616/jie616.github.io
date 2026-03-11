@@ -136,6 +136,67 @@
             height: 1px;
             background: linear-gradient(90deg, transparent 0%, #333 50%, transparent 100%);
         }
+        
+        /* 视频卡片样式 */
+        .video-card {
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            background: linear-gradient(145deg, #1a1a1a 0%, #0f0f0f 100%);
+            border: 1px solid #222;
+            cursor: pointer;
+        }
+        .video-card:hover {
+            transform: translateY(-8px);
+            border-color: #00C1FF;
+            box-shadow: 0 20px 40px rgba(0, 193, 255, 0.15);
+        }
+        .video-card .play-btn {
+            transition: all 0.3s ease;
+            opacity: 0.9;
+        }
+        .video-card:hover .play-btn {
+            transform: scale(1.1);
+            opacity: 1;
+            box-shadow: 0 0 40px rgba(0, 193, 255, 0.5);
+        }
+        .video-card img {
+            transition: transform 0.6s ease;
+        }
+        .video-card:hover img {
+            transform: scale(1.05);
+        }
+        
+        /* 视频弹窗 - HTML5播放器 */
+        .video-modal {
+            display: none;
+            position: fixed;
+            inset: 0;
+            background: rgba(0,0,0,0.98);
+            z-index: 100;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+            backdrop-filter: blur(20px);
+        }
+        .video-modal.active {
+            display: flex;
+        }
+        .video-container {
+            width: 100%;
+            max-width: 1200px;
+            position: relative;
+        }
+        .video-container video {
+            width: 100%;
+            border-radius: 12px;
+            box-shadow: 0 25px 50px rgba(0,0,0,0.5);
+        }
+        /* 自定义视频播放器样式 */
+        video::-webkit-media-controls {
+            background: linear-gradient(to top, rgba(0,0,0,0.8), transparent);
+        }
+        video::-webkit-media-controls-panel {
+            background: transparent;
+        }
     </style>
 </head>
 <body class="antialiased">
@@ -147,6 +208,7 @@
             </a>
             <nav class="hidden md:flex items-center space-x-12 text-[13px] text-[#c9c9c9]">
                 <a href="#works" class="nav-link cursor-pointer">作品</a>
+                <a href="#videos" class="nav-link cursor-pointer">视频</a>
                 <a href="#about" class="nav-link cursor-pointer">关于</a>
                 <a href="#contact" class="nav-link cursor-pointer">联系</a>
             </nav>
@@ -160,6 +222,7 @@
         <!-- 移动端菜单 -->
         <div id="mobile-menu" class="hidden md:hidden bg-[#0a0a0a] border-t border-white/5 px-6 py-4">
             <a href="#works" class="block py-3 text-[#c9c9c9] hover:text-white transition">作品</a>
+            <a href="#videos" class="block py-3 text-[#c9c9c9] hover:text-white transition">视频</a>
             <a href="#about" class="block py-3 text-[#c9c9c9] hover:text-white transition">关于</a>
             <a href="#contact" class="block py-3 text-[#c9c9c9] hover:text-white transition">联系</a>
         </div>
@@ -173,15 +236,12 @@
             <div class="absolute bottom-1/4 right-1/4 w-96 h-96 bg-[#6B5CE7]/5 rounded-full blur-3xl"></div>
         </div>
         
-        <div class="text-center px-6 relative z-10 max-w-6xl mx-auto animate-fade-in-up">
+        <div class="text-center px-6 relative z-10 max-w-5xl mx-auto animate-fade-in-up">
             <p class="text-[#00C1FF] text-sm tracking-[0.3em] mb-6 uppercase">Visual Creator</p>
-            
-            <!-- 影视飓风无限进步风格标题 -->
             <h1 class="hero-title text-white mb-6">
                 <span class="block text-[#666] text-2xl md:text-3xl font-normal tracking-[0.2em] mb-4">我是</span>
                 <span class="gradient-text">JIEEEEEE</span>
             </h1>
-            
             <p class="text-lg md:text-xl text-[#888] mb-12 font-light tracking-wide max-w-2xl mx-auto">
                 平面设计师 / UI设计师 / 摄影师
             </p>
@@ -265,6 +325,76 @@
 
     <div class="divider max-w-4xl mx-auto"></div>
 
+    <!-- 视频作品 - 云存储版本 -->
+    <section id="videos" class="py-32 px-6 max-w-7xl mx-auto">
+        <div class="text-center mb-20">
+            <p class="text-[#00C1FF] text-sm tracking-[0.3em] mb-4 uppercase">Videos</p>
+            <h2 class="text-4xl md:text-5xl font-light text-white mb-6">视频作品</h2>
+            <p class="text-[#666] font-light">点击播放视频</p>
+        </div>
+        
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <!-- 视频1 - 替换为你的云存储链接 -->
+            <div class="video-card rounded-2xl overflow-hidden group" onclick="openVideo('https://你的存储桶.cos.ap-地区.myqcloud.com/video1.mp4', '城市光影纪录')">
+                <div class="relative h-52 overflow-hidden">
+                    <img src="https://images.unsplash.com/photo-1536240478700-b869070f9279?w=800&h=450&fit=crop" alt="视频封面1" class="w-full h-full object-cover">
+                    <div class="absolute inset-0 bg-black/40 group-hover:bg-black/20 transition-all"></div>
+                    <div class="play-btn absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-16 h-16 rounded-full bg-[#00C1FF]/90 flex items-center justify-center">
+                        <svg class="w-6 h-6 text-white ml-1" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M8 5v14l11-7z"/>
+                        </svg>
+                    </div>
+                    <span class="absolute bottom-3 right-3 bg-black/70 px-2 py-1 rounded text-xs text-white">03:45</span>
+                </div>
+                <div class="p-6">
+                    <span class="text-[#00C1FF] text-xs tracking-wider uppercase">短片</span>
+                    <h3 class="text-lg font-medium mt-2 text-white group-hover:text-[#00C1FF] transition-colors">城市光影纪录</h3>
+                    <p class="text-[#666] text-sm mt-1 font-light">索尼A7S III拍摄 | 4K HDR</p>
+                </div>
+            </div>
+
+            <!-- 视频2 - 替换为你的云存储链接 -->
+            <div class="video-card rounded-2xl overflow-hidden group" onclick="openVideo('https://你的存储桶.cos.ap-地区.myqcloud.com/video2.mp4', '旅行日记：上海篇')">
+                <div class="relative h-52 overflow-hidden">
+                    <img src="https://images.unsplash.com/photo-1492691527719-9d1e07e534b4?w=800&h=450&fit=crop" alt="视频封面2" class="w-full h-full object-cover">
+                    <div class="absolute inset-0 bg-black/40 group-hover:bg-black/20 transition-all"></div>
+                    <div class="play-btn absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-16 h-16 rounded-full bg-[#00C1FF]/90 flex items-center justify-center">
+                        <svg class="w-6 h-6 text-white ml-1" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M8 5v14l11-7z"/>
+                        </svg>
+                    </div>
+                    <span class="absolute bottom-3 right-3 bg-black/70 px-2 py-1 rounded text-xs text-white">05:20</span>
+                </div>
+                <div class="p-6">
+                    <span class="text-[#00C1FF] text-xs tracking-wider uppercase">Vlog</span>
+                    <h3 class="text-lg font-medium mt-2 text-white group-hover:text-[#00C1FF] transition-colors">旅行日记：上海篇</h3>
+                    <p class="text-[#666] text-sm mt-1 font-light">手持拍摄 | 电影感调色</p>
+                </div>
+            </div>
+
+            <!-- 视频3 - 替换为你的云存储链接 -->
+            <div class="video-card rounded-2xl overflow-hidden group" onclick="openVideo('https://你的存储桶.cos.ap-地区.myqcloud.com/video3.mp4', '产品广告短片')">
+                <div class="relative h-52 overflow-hidden">
+                    <img src="https://images.unsplash.com/photo-1574717024653-61fd2cf4d44c?w=800&h=450&fit=crop" alt="视频封面3" class="w-full h-full object-cover">
+                    <div class="absolute inset-0 bg-black/40 group-hover:bg-black/20 transition-all"></div>
+                    <div class="play-btn absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-16 h-16 rounded-full bg-[#00C1FF]/90 flex items-center justify-center">
+                        <svg class="w-6 h-6 text-white ml-1" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M8 5v14l11-7z"/>
+                        </svg>
+                    </div>
+                    <span class="absolute bottom-3 right-3 bg-black/70 px-2 py-1 rounded text-xs text-white">08:15</span>
+                </div>
+                <div class="p-6">
+                    <span class="text-[#00C1FF] text-xs tracking-wider uppercase">商业</span>
+                    <h3 class="text-lg font-medium mt-2 text-white group-hover:text-[#00C1FF] transition-colors">产品广告短片</h3>
+                    <p class="text-[#666] text-sm mt-1 font-light">甲方品牌 | 棚拍</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="divider max-w-4xl mx-auto"></div>
+
     <!-- 关于我 -->
     <section id="about" class="py-32 px-6">
         <div class="max-w-4xl mx-auto text-center">
@@ -334,6 +464,18 @@
         </div>
     </div>
 
+    <!-- 视频播放弹窗 - HTML5本地视频 -->
+    <div id="video-modal" class="video-modal" onclick="closeVideo()">
+        <button class="absolute top-6 right-6 text-white/50 hover:text-white text-4xl transition-colors z-10">&times;</button>
+        <div class="video-container" onclick="event.stopPropagation()">
+            <video id="video-player" controls poster="" preload="metadata">
+                <source src="" type="video/mp4">
+                您的浏览器不支持视频播放
+            </video>
+        </div>
+        <p id="video-title" class="text-white/80 text-center mt-4 text-lg font-light tracking-wide absolute bottom-10 left-0 right-0"></p>
+    </div>
+
     <!-- 脚本 -->
     <script>
         function openLightbox(src, title) {
@@ -355,6 +497,26 @@
         function toggleMenu() {
             const menu = document.getElementById('mobile-menu');
             menu.classList.toggle('hidden');
+        }
+        
+        // 本地视频播放
+        function openVideo(videoSrc, title) {
+            const video = document.getElementById('video-player');
+            const source = video.querySelector('source');
+            source.src = videoSrc;
+            video.load();
+            document.getElementById('video-title').textContent = title;
+            document.getElementById('video-modal').classList.add('active');
+            document.body.style.overflow = 'hidden';
+            video.play();
+        }
+        
+        function closeVideo() {
+            const video = document.getElementById('video-player');
+            video.pause();
+            video.currentTime = 0;
+            document.getElementById('video-modal').classList.remove('active');
+            document.body.style.overflow = 'auto';
         }
         
         // 平滑滚动
