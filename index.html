@@ -12,7 +12,6 @@
             font-family: 'Inter', 'Noto Sans SC', -apple-system, BlinkMacSystemFont, sans-serif;
         }
         
-        /* 影视飓风风格 - 无限进步字体 */
         .hero-title {
             font-family: 'Noto Sans SC', 'Inter', sans-serif;
             font-weight: 900;
@@ -27,7 +26,6 @@
             color: #c9c9c9;
         }
         
-        /* 影视飓风风格渐变文字 */
         .gradient-text {
             background: linear-gradient(135deg, #00C1FF 0%, #0080FF 50%, #6B5CE7 100%);
             -webkit-background-clip: text;
@@ -35,7 +33,6 @@
             background-clip: text;
         }
         
-        /* 导航hover效果 - 字间距放大 */
         .nav-link {
             transition: all 0.3s ease;
             letter-spacing: 0;
@@ -46,7 +43,6 @@
             transform: scale(1.05);
         }
         
-        /* 卡片hover效果 */
         .work-card {
             transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
             background: linear-gradient(145deg, #1a1a1a 0%, #0f0f0f 100%);
@@ -64,7 +60,6 @@
             transform: scale(1.08);
         }
         
-        /* 按钮样式 */
         .btn-primary {
             background: linear-gradient(135deg, #00C1FF 0%, #0080FF 100%);
             transition: all 0.3s ease;
@@ -85,7 +80,6 @@
             transform: translateY(-2px);
         }
         
-        /* 图片放大查看 */
         .lightbox {
             display: none;
             position: fixed;
@@ -101,7 +95,6 @@
             display: flex;
         }
         
-        /* 滚动条样式 */
         ::-webkit-scrollbar {
             width: 8px;
         }
@@ -116,7 +109,6 @@
             background: #00C1FF;
         }
         
-        /* 动画 */
         @keyframes fadeInUp {
             from {
                 opacity: 0;
@@ -131,13 +123,11 @@
             animation: fadeInUp 0.8s ease-out;
         }
         
-        /* 分割线 */
         .divider {
             height: 1px;
             background: linear-gradient(90deg, transparent 0%, #333 50%, transparent 100%);
         }
         
-        /* 视频卡片样式 */
         .video-card {
             transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
             background: linear-gradient(145deg, #1a1a1a 0%, #0f0f0f 100%);
@@ -165,7 +155,6 @@
             transform: scale(1.05);
         }
         
-        /* 视频弹窗 - HTML5播放器 */
         .video-modal {
             display: none;
             position: fixed;
@@ -190,7 +179,6 @@
             border-radius: 12px;
             box-shadow: 0 25px 50px rgba(0,0,0,0.5);
         }
-        /* 自定义视频播放器样式 */
         video::-webkit-media-controls {
             background: linear-gradient(to top, rgba(0,0,0,0.8), transparent);
         }
@@ -200,7 +188,6 @@
     </style>
 </head>
 <body class="antialiased">
-    <!-- 顶部导航 - 影视飓风风格 -->
     <header class="fixed top-0 w-full bg-[#0a0a0a]/90 backdrop-blur-md z-50 border-b border-white/5">
         <div class="max-w-7xl mx-auto px-6 py-5 flex justify-between items-center">
             <a href="#" class="text-white text-lg font-light tracking-wider hover:text-[#00C1FF] transition-colors">
@@ -212,14 +199,12 @@
                 <a href="#about" class="nav-link cursor-pointer">关于</a>
                 <a href="#contact" class="nav-link cursor-pointer">联系</a>
             </nav>
-            <!-- 移动端菜单按钮 -->
             <button class="md:hidden text-white" onclick="toggleMenu()">
                 <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4 6h16M4 12h16M4 18h16"/>
                 </svg>
             </button>
         </div>
-        <!-- 移动端菜单 -->
         <div id="mobile-menu" class="hidden md:hidden bg-[#0a0a0a] border-t border-white/5 px-6 py-4">
             <a href="#works" class="block py-3 text-[#c9c9c9] hover:text-white transition">作品</a>
             <a href="#videos" class="block py-3 text-[#c9c9c9] hover:text-white transition">视频</a>
@@ -228,9 +213,7 @@
         </div>
     </header>
 
-    <!-- 首页 Hero - 影视飓风风格 -->
     <section class="min-h-screen flex items-center justify-center relative overflow-hidden pt-20">
-        <!-- 背景装饰 -->
         <div class="absolute inset-0 overflow-hidden">
             <div class="absolute top-1/4 left-1/4 w-96 h-96 bg-[#00C1FF]/5 rounded-full blur-3xl"></div>
             <div class="absolute bottom-1/4 right-1/4 w-96 h-96 bg-[#6B5CE7]/5 rounded-full blur-3xl"></div>
@@ -246,7 +229,6 @@
                 平面设计师 / UI设计师 / 摄影师
             </p>
             
-            <!-- 按钮组 -->
             <div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
                 <a href="#works" class="btn-primary px-10 py-4 text-white rounded-full text-sm tracking-wider">
                     查看作品
@@ -263,7 +245,6 @@
             </div>
         </div>
         
-        <!-- 滚动提示 -->
         <div class="absolute bottom-10 left-1/2 transform -translate-x-1/2 animate-bounce">
             <svg class="w-6 h-6 text-[#333]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M19 14l-7 7m0 0l-7-7m7 7V3"/>
@@ -273,7 +254,6 @@
 
     <div class="divider max-w-4xl mx-auto"></div>
 
-    <!-- 作品展示 -->
     <section id="works" class="py-32 px-6 max-w-7xl mx-auto">
         <div class="text-center mb-20">
             <p class="text-[#00C1FF] text-sm tracking-[0.3em] mb-4 uppercase">Portfolio</p>
@@ -282,7 +262,6 @@
         </div>
         
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            <!-- 作品1 -->
             <div class="work-card rounded-2xl overflow-hidden cursor-pointer group" onclick="openLightbox('./images/work1.jpg', '品牌视觉设计')">
                 <div class="h-72 overflow-hidden relative">
                     <img src="./images/work1.jpg" alt="作品1" class="w-full h-full object-cover" onerror="this.src='https://images.unsplash.com/photo-1561070791-2526d30994b5?w=800&h=600&fit=crop'">
@@ -295,7 +274,6 @@
                 </div>
             </div>
 
-            <!-- 作品2 -->
             <div class="work-card rounded-2xl overflow-hidden cursor-pointer group" onclick="openLightbox('./images/work2.jpg', 'APP界面设计')">
                 <div class="h-72 overflow-hidden relative">
                     <img src="./images/work2.jpg" alt="作品2" class="w-full h-full object-cover" onerror="this.src='https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?w=800&h=600&fit=crop'">
@@ -308,7 +286,6 @@
                 </div>
             </div>
 
-            <!-- 作品3 -->
             <div class="work-card rounded-2xl overflow-hidden cursor-pointer group" onclick="openLightbox('./images/work3.jpg', '城市摄影')">
                 <div class="h-72 overflow-hidden relative">
                     <img src="./images/work3.jpg" alt="作品3" class="w-full h-full object-cover" onerror="this.src='https://images.unsplash.com/photo-1449824913935-59a10b8d2000?w=800&h=600&fit=crop'">
@@ -325,7 +302,6 @@
 
     <div class="divider max-w-4xl mx-auto"></div>
 
-    <!-- 视频作品 - 云存储版本 -->
     <section id="videos" class="py-32 px-6 max-w-7xl mx-auto">
         <div class="text-center mb-20">
             <p class="text-[#00C1FF] text-sm tracking-[0.3em] mb-4 uppercase">Videos</p>
@@ -334,8 +310,8 @@
         </div>
         
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            <!-- 视频1 - 替换为你的云存储链接 -->
-            <div class="video-card rounded-2xl overflow-hidden group" onclick="openVideo('https://你的存储桶.cos.ap-地区.myqcloud.com/video1.mp4', '城市光影纪录')">
+            <!-- 视频1 - 已更新你的链接 -->
+            <div class="video-card rounded-2xl overflow-hidden group" onclick="openVideo('https://jie-1410638926.cos.ap-guangzhou.myqcloud.com/1/12313.mp4', '城市光影纪录')">
                 <div class="relative h-52 overflow-hidden">
                     <img src="https://images.unsplash.com/photo-1536240478700-b869070f9279?w=800&h=450&fit=crop" alt="视频封面1" class="w-full h-full object-cover">
                     <div class="absolute inset-0 bg-black/40 group-hover:bg-black/20 transition-all"></div>
@@ -353,8 +329,8 @@
                 </div>
             </div>
 
-            <!-- 视频2 - 替换为你的云存储链接 -->
-            <div class="video-card rounded-2xl overflow-hidden group" onclick="openVideo('https://jie-1410638926.cos.ap-guangzhou.myqcloud.com/1/你的视频2.mp4', '调色日记：顺峰山公园')">
+            <!-- 视频2 - 换成你的第二个视频链接 -->
+            <div class="video-card rounded-2xl overflow-hidden group" onclick="openVideo('./videos/video2.mp4', '旅行日记：上海篇')">
                 <div class="relative h-52 overflow-hidden">
                     <img src="https://images.unsplash.com/photo-1492691527719-9d1e07e534b4?w=800&h=450&fit=crop" alt="视频封面2" class="w-full h-full object-cover">
                     <div class="absolute inset-0 bg-black/40 group-hover:bg-black/20 transition-all"></div>
@@ -372,8 +348,8 @@
                 </div>
             </div>
 
-            <!-- 视频3 - 替换为你的云存储链接 -->
-            <div class="video-card rounded-2xl overflow-hidden group" onclick="openVideo('https://你的存储桶.cos.ap-地区.myqcloud.com/video3.mp4', '产品广告短片')">
+            <!-- 视频3 - 换成你的第三个视频链接 -->
+            <div class="video-card rounded-2xl overflow-hidden group" onclick="openVideo('./videos/video3.mp4', '产品广告短片')">
                 <div class="relative h-52 overflow-hidden">
                     <img src="https://images.unsplash.com/photo-1574717024653-61fd2cf4d44c?w=800&h=450&fit=crop" alt="视频封面3" class="w-full h-full object-cover">
                     <div class="absolute inset-0 bg-black/40 group-hover:bg-black/20 transition-all"></div>
@@ -395,7 +371,6 @@
 
     <div class="divider max-w-4xl mx-auto"></div>
 
-    <!-- 关于我 -->
     <section id="about" class="py-32 px-6">
         <div class="max-w-4xl mx-auto text-center">
             <p class="text-[#00C1FF] text-sm tracking-[0.3em] mb-4 uppercase">About</p>
@@ -424,7 +399,6 @@
 
     <div class="divider max-w-4xl mx-auto"></div>
 
-    <!-- 联系我 -->
     <section id="contact" class="py-32 px-6">
         <div class="max-w-4xl mx-auto text-center">
             <p class="text-[#00C1FF] text-sm tracking-[0.3em] mb-4 uppercase">Contact</p>
@@ -447,7 +421,6 @@
         </div>
     </section>
 
-    <!-- 页脚 -->
     <footer class="py-8 px-6 border-t border-white/5">
         <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center text-[#666] text-sm">
             <p>&copy; 2026 Jieeeeee. All rights reserved.</p>
@@ -455,7 +428,6 @@
         </div>
     </footer>
 
-    <!-- 图片放大查看 -->
     <div id="lightbox" class="lightbox" onclick="closeLightbox()">
         <button class="absolute top-6 right-6 text-white/50 hover:text-white text-4xl transition-colors z-10">&times;</button>
         <div class="max-w-5xl w-full px-4" onclick="event.stopPropagation()">
@@ -464,7 +436,6 @@
         </div>
     </div>
 
-    <!-- 视频播放弹窗 - HTML5本地视频 -->
     <div id="video-modal" class="video-modal" onclick="closeVideo()">
         <button class="absolute top-6 right-6 text-white/50 hover:text-white text-4xl transition-colors z-10">&times;</button>
         <div class="video-container" onclick="event.stopPropagation()">
@@ -476,7 +447,6 @@
         <p id="video-title" class="text-white/80 text-center mt-4 text-lg font-light tracking-wide absolute bottom-10 left-0 right-0"></p>
     </div>
 
-    <!-- 脚本 -->
     <script>
         function openLightbox(src, title) {
             document.getElementById('lightbox-img').src = src;
@@ -499,7 +469,6 @@
             menu.classList.toggle('hidden');
         }
         
-        // 本地视频播放
         function openVideo(videoSrc, title) {
             const video = document.getElementById('video-player');
             const source = video.querySelector('source');
@@ -519,7 +488,6 @@
             document.body.style.overflow = 'auto';
         }
         
-        // 平滑滚动
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
                 e.preventDefault();
@@ -536,4 +504,3 @@
     </script>
 </body>
 </html>
-
