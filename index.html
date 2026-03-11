@@ -3,162 +3,358 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>我的作品集</title>
+    <title>Jieeeeee | 创作者</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
     <style>
-        .gradient-text { 
-            background: linear-gradient(135deg, #2563eb, #9333ea); 
-            -webkit-background-clip: text; 
-            -webkit-text-fill-color: transparent; 
+        * {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
         }
-        .work-card { 
-            transition: all 0.3s; 
-            cursor: pointer; 
+        
+        body {
+            background-color: #0a0a0a;
+            color: #c9c9c9;
         }
-        .work-card:hover { 
-            transform: translateY(-8px); 
-            box-shadow: 0 20px 40px rgba(0,0,0,0.1); 
+        
+        /* 影视飓风风格渐变文字 */
+        .gradient-text {
+            background: linear-gradient(135deg, #00C1FF 0%, #0080FF 50%, #6B5CE7 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
         }
-        .work-card img { 
-            transition: transform 0.5s; 
+        
+        /* 导航hover效果 - 字间距放大 */
+        .nav-link {
+            transition: all 0.3s ease;
+            letter-spacing: 0;
         }
-        .work-card:hover img { 
-            transform: scale(1.1); 
+        .nav-link:hover {
+            letter-spacing: 2px;
+            color: #ffffff;
+            transform: scale(1.05);
         }
-        .lightbox { 
-            display: none; 
-            position: fixed; 
-            inset: 0; 
-            background: rgba(0,0,0,0.95); 
-            z-index: 100; 
-            align-items: center; 
-            justify-content: center; 
-            padding: 20px; 
+        
+        /* 卡片hover效果 */
+        .work-card {
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            background: linear-gradient(145deg, #1a1a1a 0%, #0f0f0f 100%);
+            border: 1px solid #222;
         }
-        .lightbox.active { 
-            display: flex; 
+        .work-card:hover {
+            transform: translateY(-8px);
+            border-color: #00C1FF;
+            box-shadow: 0 20px 40px rgba(0, 193, 255, 0.1);
+        }
+        .work-card img {
+            transition: transform 0.6s ease;
+        }
+        .work-card:hover img {
+            transform: scale(1.08);
+        }
+        
+        /* 按钮样式 */
+        .btn-primary {
+            background: linear-gradient(135deg, #00C1FF 0%, #0080FF 100%);
+            transition: all 0.3s ease;
+        }
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px rgba(0, 193, 255, 0.3);
+        }
+        
+        .btn-secondary {
+            background: transparent;
+            border: 1px solid #333;
+            transition: all 0.3s ease;
+        }
+        .btn-secondary:hover {
+            border-color: #00C1FF;
+            color: #00C1FF;
+            transform: translateY(-2px);
+        }
+        
+        /* 图片放大查看 */
+        .lightbox {
+            display: none;
+            position: fixed;
+            inset: 0;
+            background: rgba(0,0,0,0.95);
+            z-index: 100;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+            backdrop-filter: blur(10px);
+        }
+        .lightbox.active {
+            display: flex;
+        }
+        
+        /* 滚动条样式 */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #0a0a0a;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #333;
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #00C1FF;
+        }
+        
+        /* 动画 */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        .animate-fade-in-up {
+            animation: fadeInUp 0.8s ease-out;
+        }
+        
+        /* 分割线 */
+        .divider {
+            height: 1px;
+            background: linear-gradient(90deg, transparent 0%, #333 50%, transparent 100%);
         }
     </style>
 </head>
-<body class="bg-gray-50">
-    <!-- 顶部导航 -->
-    <header class="fixed top-0 w-full bg-white/90 backdrop-blur shadow-sm z-50">
-        <div class="max-w-7xl mx-auto px-4 py-4 flex justify-between items-center">
-            <span class="text-xl font-bold gradient-text">我的作品集</span>
-            <nav class="space-x-6">
-                <a href="#works" class="text-gray-700 hover:text-blue-600">作品</a>
-                <a href="#about" class="text-gray-700 hover:text-blue-600">关于</a>
-                <a href="#contact" class="text-gray-700 hover:text-blue-600">联系</a>
+<body class="antialiased">
+    <!-- 顶部导航 - 影视飓风风格 -->
+    <header class="fixed top-0 w-full bg-[#0a0a0a]/90 backdrop-blur-md z-50 border-b border-white/5">
+        <div class="max-w-7xl mx-auto px-6 py-5 flex justify-between items-center">
+            <a href="#" class="text-white text-lg font-light tracking-wider hover:text-[#00C1FF] transition-colors">
+                Jieeeeee
+            </a>
+            <nav class="hidden md:flex items-center space-x-12 text-[13px] text-[#c9c9c9]">
+                <a href="#works" class="nav-link cursor-pointer">作品</a>
+                <a href="#about" class="nav-link cursor-pointer">关于</a>
+                <a href="#contact" class="nav-link cursor-pointer">联系</a>
             </nav>
+            <!-- 移动端菜单按钮 -->
+            <button class="md:hidden text-white" onclick="toggleMenu()">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4 6h16M4 12h16M4 18h16"/>
+                </svg>
+            </button>
+        </div>
+        <!-- 移动端菜单 -->
+        <div id="mobile-menu" class="hidden md:hidden bg-[#0a0a0a] border-t border-white/5 px-6 py-4">
+            <a href="#works" class="block py-3 text-[#c9c9c9] hover:text-white transition">作品</a>
+            <a href="#about" class="block py-3 text-[#c9c9c9] hover:text-white transition">关于</a>
+            <a href="#contact" class="block py-3 text-[#c9c9c9] hover:text-white transition">联系</a>
         </div>
     </header>
 
-    <!-- 首页 -->
-    <section class="min-h-screen flex items-center justify-center bg-gradient-to-br from-blue-50 to-purple-50 pt-16">
-        <div class="text-center px-4">
-            <span class="inline-block px-4 py-2 bg-blue-100 text-blue-700 rounded-full text-sm mb-6">欢迎来到我的作品集</span>
-            <h1 class="text-5xl md:text-7xl font-bold mb-4">我是 <span class="gradient-text">创作者</span></h1>
-            <p class="text-xl text-gray-600 mb-8">平面设计师 / UI设计师 / 摄影师</p>
+    <!-- 首页 Hero - 影视飓风风格 -->
+    <section class="min-h-screen flex items-center justify-center relative overflow-hidden pt-20">
+        <!-- 背景装饰 -->
+        <div class="absolute inset-0 overflow-hidden">
+            <div class="absolute top-1/4 left-1/4 w-96 h-96 bg-[#00C1FF]/5 rounded-full blur-3xl"></div>
+            <div class="absolute bottom-1/4 right-1/4 w-96 h-96 bg-[#6B5CE7]/5 rounded-full blur-3xl"></div>
+        </div>
+        
+        <div class="text-center px-6 relative z-10 max-w-5xl mx-auto animate-fade-in-up">
+            <p class="text-[#00C1FF] text-sm tracking-[0.3em] mb-6 uppercase">Visual Creator</p>
+            <h1 class="text-5xl md:text-7xl lg:text-8xl font-light text-white mb-6 leading-tight">
+                我是 <span class="gradient-text font-normal">Jieeeeee</span>
+            </h1>
+            <p class="text-lg md:text-xl text-[#888] mb-12 font-light tracking-wide max-w-2xl mx-auto">
+                平面设计师 / UI设计师 / 摄影师
+            </p>
             
-            <!-- 两个按钮：查看作品 + 抖音 -->
+            <!-- 按钮组 -->
             <div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
-                <a href="#works" class="px-8 py-4 bg-blue-600 text-white rounded-full hover:bg-blue-700 transition shadow-lg hover:shadow-xl">查看作品 ↓</a>
+                <a href="#works" class="btn-primary px-10 py-4 text-white rounded-full text-sm tracking-wider">
+                    查看作品
+                </a>
                 
-                <!-- 抖音按钮 - 已填入你的真实主页链接 -->
-                <a href="https://www.douyin.com/user/MS4wLjABAAAA5GkI3A7XP9Fob8TQ_tR7TbAWPfVo97QZqwS3BHfPsPtWILNwery6PC-F2ell-2E-" target="_blank" class="px-8 py-4 bg-black text-white rounded-full hover:bg-gray-800 transition flex items-center gap-2 shadow-lg hover:shadow-xl">
-                    <svg class="w-5 h-5" viewBox="0 0 24 24" fill="white">
+                <a href="https://www.douyin.com/user/MS4wLjABAAAA5GkI3A7XP9Fob8TQ_tR7TbAWPfVo97QZqwS3BHfPsPtWILNwery6PC-F2ell-2E-" 
+                   target="_blank" 
+                   class="btn-secondary px-10 py-4 text-[#c9c9c9] rounded-full text-sm tracking-wider flex items-center gap-3">
+                    <svg class="w-5 h-5" viewBox="0 0 24 24" fill="currentColor">
                         <path d="M12.53.02C13.84 0 15.14.01 16.44 0c.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-1.43.08-2.86-.31-4.08-1.03-2.02-1.19-3.44-3.37-3.65-5.71-.02-.5-.03-1-.01-1.49.18-1.9 1.12-3.72 2.58-4.96 1.66-1.44 3.98-2.13 6.15-1.72.02 1.48-.04 2.96-.04 4.44-.99-.32-2.15-.23-3.02.37-.63.41-1.11 1.04-1.36 1.75-.21.51-.15 1.07-.14 1.61.24 1.64 1.82 3.02 3.5 2.87 1.12-.01 2.19-.66 2.77-1.61.19-.33.4-.67.41-1.06.1-1.79.06-3.57.07-5.36.01-4.03-.01-8.05.02-12.07z"/>
                     </svg>
-                    抖音：Jieeeeee
+                    抖音
+                </a>
+            </div>
+        </div>
+        
+        <!-- 滚动提示 -->
+        <div class="absolute bottom-10 left-1/2 transform -translate-x-1/2 animate-bounce">
+            <svg class="w-6 h-6 text-[#333]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M19 14l-7 7m0 0l-7-7m7 7V3"/>
+            </svg>
+        </div>
+    </section>
+
+    <div class="divider max-w-4xl mx-auto"></div>
+
+    <!-- 作品展示 -->
+    <section id="works" class="py-32 px-6 max-w-7xl mx-auto">
+        <div class="text-center mb-20">
+            <p class="text-[#00C1FF] text-sm tracking-[0.3em] mb-4 uppercase">Portfolio</p>
+            <h2 class="text-4xl md:text-5xl font-light text-white mb-6">精选作品</h2>
+            <p class="text-[#666] font-light">点击作品查看大图</p>
+        </div>
+        
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <!-- 作品1 -->
+            <div class="work-card rounded-2xl overflow-hidden cursor-pointer group" onclick="openLightbox('./images/work1.jpg', '品牌视觉设计')">
+                <div class="h-72 overflow-hidden relative">
+                    <img src="./images/work1.jpg" alt="作品1" class="w-full h-full object-cover" onerror="this.src='https://images.unsplash.com/photo-1561070791-2526d30994b5?w=800&h=600&fit=crop'">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                </div>
+                <div class="p-8">
+                    <span class="text-[#00C1FF] text-xs tracking-wider uppercase">平面设计</span>
+                    <h3 class="text-xl font-medium mt-3 text-white group-hover:text-[#00C1FF] transition-colors">品牌视觉设计</h3>
+                    <p class="text-[#666] text-sm mt-2 font-light">企业VI设计全套方案</p>
+                </div>
+            </div>
+
+            <!-- 作品2 -->
+            <div class="work-card rounded-2xl overflow-hidden cursor-pointer group" onclick="openLightbox('./images/work2.jpg', 'APP界面设计')">
+                <div class="h-72 overflow-hidden relative">
+                    <img src="./images/work2.jpg" alt="作品2" class="w-full h-full object-cover" onerror="this.src='https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?w=800&h=600&fit=crop'">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                </div>
+                <div class="p-8">
+                    <span class="text-[#00C1FF] text-xs tracking-wider uppercase">UI设计</span>
+                    <h3 class="text-xl font-medium mt-3 text-white group-hover:text-[#00C1FF] transition-colors">APP界面设计</h3>
+                    <p class="text-[#666] text-sm mt-2 font-light">移动端电商应用界面</p>
+                </div>
+            </div>
+
+            <!-- 作品3 -->
+            <div class="work-card rounded-2xl overflow-hidden cursor-pointer group" onclick="openLightbox('./images/work3.jpg', '城市摄影')">
+                <div class="h-72 overflow-hidden relative">
+                    <img src="./images/work3.jpg" alt="作品3" class="w-full h-full object-cover" onerror="this.src='https://images.unsplash.com/photo-1449824913935-59a10b8d2000?w=800&h=600&fit=crop'">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                </div>
+                <div class="p-8">
+                    <span class="text-[#00C1FF] text-xs tracking-wider uppercase">摄影</span>
+                    <h3 class="text-xl font-medium mt-3 text-white group-hover:text-[#00C1FF] transition-colors">城市摄影</h3>
+                    <p class="text-[#666] text-sm mt-2 font-light">都市建筑风光记录</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="divider max-w-4xl mx-auto"></div>
+
+    <!-- 关于我 -->
+    <section id="about" class="py-32 px-6">
+        <div class="max-w-4xl mx-auto text-center">
+            <p class="text-[#00C1FF] text-sm tracking-[0.3em] mb-4 uppercase">About</p>
+            <h2 class="text-4xl md:text-5xl font-light text-white mb-12">关于我</h2>
+            <p class="text-[#888] text-lg leading-relaxed font-light">
+                我是一名热爱创意与设计的视觉创作者，专注于<span class="text-white">平面设计</span>、<span class="text-white">UI设计</span>和<span class="text-white">摄影</span>领域。
+                我相信好的设计能够传达情感，创造价值。每一个项目都是一次新的探索，我致力于用视觉语言讲述独特的故事。
+            </p>
+            
+            <div class="mt-16 grid grid-cols-3 gap-8 max-w-lg mx-auto">
+                <div class="text-center">
+                    <p class="text-3xl font-light text-white mb-2">3+</p>
+                    <p class="text-[#666] text-sm">年经验</p>
+                </div>
+                <div class="text-center">
+                    <p class="text-3xl font-light text-white mb-2">50+</p>
+                    <p class="text-[#666] text-sm">项目</p>
+                </div>
+                <div class="text-center">
+                    <p class="text-3xl font-light text-white mb-2">30+</p>
+                    <p class="text-[#666] text-sm">客户</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="divider max-w-4xl mx-auto"></div>
+
+    <!-- 联系我 -->
+    <section id="contact" class="py-32 px-6">
+        <div class="max-w-4xl mx-auto text-center">
+            <p class="text-[#00C1FF] text-sm tracking-[0.3em] mb-4 uppercase">Contact</p>
+            <h2 class="text-4xl md:text-5xl font-light text-white mb-6">联系我</h2>
+            <p class="text-[#666] mb-12 font-light">有项目合作？欢迎随时联系</p>
+            
+            <a href="mailto:hello@example.com" class="inline-block px-12 py-5 border border-[#333] text-white rounded-full hover:border-[#00C1FF] hover:text-[#00C1FF] transition-all duration-300 text-sm tracking-wider">
+                发送邮件
+            </a>
+            
+            <div class="mt-16 flex justify-center gap-8">
+                <a href="https://www.douyin.com/user/MS4wLjABAAAA5GkI3A7XP9Fob8TQ_tR7TbAWPfVo97QZqwS3BHfPsPtWILNwery6PC-F2ell-2E-" 
+                   target="_blank" 
+                   class="w-12 h-12 rounded-full border border-[#333] flex items-center justify-center text-[#666] hover:border-[#00C1FF] hover:text-[#00C1FF] transition-all">
+                    <svg class="w-5 h-5" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M12.53.02C13.84 0 15.14.01 16.44 0c.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-1.43.08-2.86-.31-4.08-1.03-2.02-1.19-3.44-3.37-3.65-5.71-.02-.5-.03-1-.01-1.49.18-1.9 1.12-3.72 2.58-4.96 1.66-1.44 3.98-2.13 6.15-1.72.02 1.48-.04 2.96-.04 4.44-.99-.32-2.15-.23-3.02.37-.63.41-1.11 1.04-1.36 1.75-.21.51-.15 1.07-.14 1.61.24 1.64 1.82 3.02 3.5 2.87 1.12-.01 2.19-.66 2.77-1.61.19-.33.4-.67.41-1.06.1-1.79.06-3.57.07-5.36.01-4.03-.01-8.05.02-12.07z"/>
+                    </svg>
                 </a>
             </div>
         </div>
     </section>
 
-    <!-- 作品展示 -->
-    <section id="works" class="py-20 px-4 max-w-7xl mx-auto">
-        <h2 class="text-4xl font-bold text-center mb-4 gradient-text">精选作品</h2>
-        <p class="text-gray-600 text-center mb-12">点击作品查看大图</p>
-        
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            <!-- 作品1 -->
-            <div class="work-card bg-white rounded-2xl overflow-hidden shadow-sm" onclick="openLightbox('./images/work1.jpg', '品牌视觉设计')">
-                <div class="h-64 overflow-hidden">
-                    <img src="./images/work1.jpg" alt="作品1" class="w-full h-full object-cover" onerror="this.src='https://via.placeholder.com/800x600?text=请放入照片work1.jpg'">
-                </div>
-                <div class="p-6">
-                    <span class="text-blue-600 text-sm font-medium">平面设计</span>
-                    <h3 class="text-xl font-bold mt-2 text-gray-800">品牌视觉设计</h3>
-                    <p class="text-gray-600 text-sm mt-2">企业VI设计全套方案</p>
-                </div>
-            </div>
-
-            <!-- 作品2 -->
-            <div class="work-card bg-white rounded-2xl overflow-hidden shadow-sm" onclick="openLightbox('./images/work2.jpg', 'APP界面设计')">
-                <div class="h-64 overflow-hidden">
-                    <img src="./images/work2.jpg" alt="作品2" class="w-full h-full object-cover" onerror="this.src='https://via.placeholder.com/800x600?text=请放入照片work2.jpg'">
-                </div>
-                <div class="p-6">
-                    <span class="text-blue-600 text-sm font-medium">UI设计</span>
-                    <h3 class="text-xl font-bold mt-2 text-gray-800">APP界面设计</h3>
-                    <p class="text-gray-600 text-sm mt-2">移动端电商应用界面</p>
-                </div>
-            </div>
-
-            <!-- 作品3 -->
-            <div class="work-card bg-white rounded-2xl overflow-hidden shadow-sm" onclick="openLightbox('./images/work3.jpg', '城市摄影')">
-                <div class="h-64 overflow-hidden">
-                    <img src="./images/work3.jpg" alt="作品3" class="w-full h-full object-cover" onerror="this.src='https://via.placeholder.com/800x600?text=请放入照片work3.jpg'">
-                </div>
-                <div class="p-6">
-                    <span class="text-blue-600 text-sm font-medium">摄影</span>
-                    <h3 class="text-xl font-bold mt-2 text-gray-800">城市摄影</h3>
-                    <p class="text-gray-600 text-sm mt-2">都市建筑风光记录</p>
-                </div>
-            </div>
+    <!-- 页脚 -->
+    <footer class="py-8 px-6 border-t border-white/5">
+        <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center text-[#666] text-sm">
+            <p>&copy; 2026 Jieeeeee. All rights reserved.</p>
+            <p class="mt-2 md:mt-0">Designed with passion</p>
         </div>
-    </section>
-
-    <!-- 关于我 -->
-    <section id="about" class="py-20 bg-white">
-        <div class="max-w-7xl mx-auto px-4 text-center">
-            <h2 class="text-4xl font-bold mb-8 gradient-text">关于我</h2>
-            <p class="text-gray-600 text-lg leading-relaxed max-w-2xl mx-auto">我是一名热爱创意与设计的视觉创作者，专注于平面设计、UI设计和摄影领域。</p>
-        </div>
-    </section>
-
-    <!-- 联系我 -->
-    <section id="contact" class="py-20 bg-gray-900 text-white text-center">
-        <h2 class="text-4xl font-bold mb-4">联系我</h2>
-        <p class="text-gray-400 mb-8">有项目合作？欢迎随时联系</p>
-        <a href="mailto:hello@example.com" class="px-8 py-4 bg-blue-600 rounded-full hover:bg-blue-700 transition inline-block">发送邮件</a>
-    </section>
+    </footer>
 
     <!-- 图片放大查看 -->
     <div id="lightbox" class="lightbox" onclick="closeLightbox()">
-        <button class="absolute top-4 right-6 text-white text-5xl hover:text-gray-300">&times;</button>
+        <button class="absolute top-6 right-6 text-white/50 hover:text-white text-4xl transition-colors z-10">&times;</button>
         <div class="max-w-5xl w-full px-4" onclick="event.stopPropagation()">
             <img id="lightbox-img" src="" class="w-full rounded-lg shadow-2xl">
-            <p id="lightbox-title" class="text-white text-center mt-4 text-xl"></p>
+            <p id="lightbox-title" class="text-white/80 text-center mt-6 text-lg font-light tracking-wide"></p>
         </div>
     </div>
 
     <!-- 脚本 -->
     <script>
-        function openLightbox(src, title) { 
-            document.getElementById('lightbox-img').src = src; 
-            document.getElementById('lightbox-title').textContent = title; 
-            document.getElementById('lightbox').classList.add('active'); 
-            document.body.style.overflow = 'hidden'; 
+        function openLightbox(src, title) {
+            document.getElementById('lightbox-img').src = src;
+            document.getElementById('lightbox-title').textContent = title;
+            document.getElementById('lightbox').classList.add('active');
+            document.body.style.overflow = 'hidden';
         }
         
-        function closeLightbox() { 
-            document.getElementById('lightbox').classList.remove('active'); 
-            document.body.style.overflow = 'auto'; 
+        function closeLightbox() {
+            document.getElementById('lightbox').classList.remove('active');
+            document.body.style.overflow = 'auto';
         }
         
-        document.addEventListener('keydown', (e) => { 
-            if (e.key === 'Escape') closeLightbox(); 
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') closeLightbox();
+        });
+        
+        function toggleMenu() {
+            const menu = document.getElementById('mobile-menu');
+            menu.classList.toggle('hidden');
+        }
+        
+        // 平滑滚动
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                    document.getElementById('mobile-menu').classList.add('hidden');
+                }
+            });
         });
     </script>
 </body>
