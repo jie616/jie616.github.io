@@ -320,23 +320,22 @@
         
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             <!-- 视频1 - 已更新你的链接 -->
-            <div class="video-card rounded-2xl overflow-hidden group" onclick="openVideo('https://jie-1410638926.cos.ap-guangzhou.myqcloud.com/1/12313.mp4', '视频标题1')">
-                <div class="relative h-52 overflow-hidden">
-                    <img src="https://images.unsplash.com/photo-1536240478700-b869070f9279?w=800&h=450&fit=crop" alt="视频封面1" class="w-full h-full object-cover">
-                    <div class="absolute inset-0 bg-black/40 group-hover:bg-black/20 transition-all"></div>
-                    <div class="play-btn absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-16 h-16 rounded-full bg-[#00C1FF]/90 flex items-center justify-center">
-                        <svg class="w-6 h-6 text-white ml-1" fill="currentColor" viewBox="0 0 24 24">
-                            <path d="M8 5v14l11-7z"/>
-                        </svg>
-                    </div>
-                    <span class="absolute bottom-3 right-3 bg-black/70 px-2 py-1 rounded text-xs text-white">--:--</span>
-                </div>
-                <div class="p-6">
-                    <span class="text-[#00C1FF] text-xs tracking-wider uppercase">分类</span>
-                    <h3 class="text-lg font-medium mt-2 text-white group-hover:text-[#00C1FF] transition-colors">顺峰山公园</h3>
-                    <p class="text-[#666] text-sm mt-1 font-light">视频描述</p>
-                </div>
-            </div>
+           <div class="video-card rounded-2xl overflow-hidden group" onclick="openVideo('https://jie-1410638926.cos.ap-guangzhou.myqcloud.com/1/12313.mp4', '视频标题1')">
+    <div class="relative h-52 overflow-hidden">
+        <video src="https://jie-1410638926.cos.ap-guangzhou.myqcloud.com/1/12313.mp4#t=5" class="w-full h-full object-cover opacity-60 group-hover:opacity-40 transition-opacity" preload="metadata"></video>
+        <div class="play-btn absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-16 h-16 rounded-full bg-[#00C1FF]/90 flex items-center justify-center">
+            <svg class="w-6 h-6 text-white ml-1" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M8 5v14l11-7z"/>
+            </svg>
+        </div>
+        <span class="absolute bottom-3 right-3 bg-black/70 px-2 py-1 rounded text-xs text-white">--:--</span>
+    </div>
+    <div class="p-6">
+        <span class="text-[#00C1FF] text-xs tracking-wider uppercase">分类</span>
+        <h3 class="text-lg font-medium mt-2 text-white group-hover:text-[#00C1FF] transition-colors">顺峰山公园</h3>
+        <p class="text-[#666] text-sm mt-1 font-light">视频描述</p>
+    </div>
+</div>
 
             <!-- 视频2 -->
            <!-- 视频卡片 2 -->
