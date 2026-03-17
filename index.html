@@ -150,15 +150,6 @@
             border-color: #00C1FF;
             box-shadow: 0 20px 40px rgba(0, 193, 255, 0.15);
         }
-        .video-card .play-btn {
-            transition: all 0.3s ease;
-            opacity: 0.9;
-        }
-        .video-card:hover .play-btn {
-            transform: scale(1.1);
-            opacity: 1;
-            box-shadow: 0 0 40px rgba(0, 193, 255, 0.5);
-        }
         .video-card img {
             transition: transform 0.6s ease;
         }
@@ -320,15 +311,10 @@
         
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             <!-- 视频1 - 已更新你的链接 -->
-           <div class="video-card rounded-2xl overflow-hidden group" onclick="openVideo('https://jie-1410638926.cos.ap-guangzhou.myqcloud.com/1/12313.mp4', '视频标题1')">
+           <div class="video-card rounded-2xl overflow-hidden group">
     <div class="relative h-52 overflow-hidden">
         <video src="https://jie-1410638926.cos.ap-guangzhou.myqcloud.com/1/12313.mp4#t=1" class="w-full h-full object-cover opacity-60 group-hover:opacity-40 transition-opacity" preload="metadata"></video>
-        <div class="play-btn absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-16 h-16 rounded-full bg-[#00C1FF]/90 flex items-center justify-center">
-            <svg class="w-6 h-6 text-white ml-1" fill="currentColor" viewBox="0 0 24 24">
-                <path d="M8 5v14l11-7z"/>
-            </svg>
-        </div>
-        <span class="absolute bottom-3 right-3 bg-black/70 px-2 py-1 rounded text-xs text-white">--:--</span>
+<span class="absolute bottom-3 right-3 bg-black/70 px-2 py-1 rounded text-xs text-white">--:--</span>
     </div>
     <div class="p-6">
         <span class="text-[#00C1FF] text-xs tracking-wider uppercase">分类</span>
@@ -340,15 +326,10 @@
             <!-- 视频2 -->
            <!-- 视频卡片 2 -->
 <!-- 视频卡片 2 -->
-<div class="video-card rounded-xl overflow-hidden cursor-pointer group" onclick="openVideo('https://jie-1410638926.cos.ap-guangzhou.myqcloud.com/1-%E7%AD%91%E6%A2%A6%E7%B1%BB%E4%BD%9C%E5%93%81-%E7%BA%A2%E5%B2%A9%EF%BC%88%E6%AC%A7%E9%98%B3%E6%82%A6%20%E5%AD%9F%E5%BF%83%E5%AE%87%20%E9%83%AD%E6%96%87%E6%9D%B0%EF%BC%89%20.mp4', '红岩')">
+<div class="video-card rounded-xl overflow-hidden cursor-pointer group">
     <div class="relative aspect-video bg-[#1a1a1a]">
         <video src="https://jie-1410638926.cos.ap-guangzhou.myqcloud.com/1-%E7%AD%91%E6%A2%A6%E7%B1%BB%E4%BD%9C%E5%93%81-%E7%BA%A2%E5%B2%A9%EF%BC%88%E6%AC%A7%E9%98%B3%E6%82%A6%20%E5%AD%9F%E5%BF%83%E5%AE%87%20%E9%83%AD%E6%96%87%E6%9D%B0%EF%BC%89%20.mp4#t=10" class="w-full h-full object-cover opacity-60 group-hover:opacity-40 transition-opacity" preload="metadata"></video>
-        <div class="play-btn absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-16 h-16 bg-[#00C1FF]/90 rounded-full flex items-center justify-center backdrop-blur-sm">
-            <svg class="w-6 h-6 text-white ml-1" fill="currentColor" viewBox="0 0 24 24">
-                <path d="M8 5v14l11-7z"/>
-            </svg>
-        </div>
-    </div>
+</div>
     <div class="p-5">
         <span class="text-[#00C1FF] text-xs tracking-wider uppercase">分类</span>
         <h3 class="text-lg font-medium mt-2 text-white group-hover:text-[#00C1FF] transition-colors">红岩</h3>
@@ -357,16 +338,11 @@
 </div>
 
             <!-- 视频3 -->
-            <div class="video-card rounded-2xl overflow-hidden group" onclick="openVideo('https://jie-1410638926.cos.ap-guangzhou.myqcloud.com/1/视频3.mp4', '视频标题3')">
+            <div class="video-card rounded-2xl overflow-hidden group">
                 <div class="relative h-52 overflow-hidden">
                     <img src="https://images.unsplash.com/photo-1574717024653-61fd2cf4d44c?w=800&h=450&fit=crop" alt="视频封面3" class="w-full h-full object-cover">
                     <div class="absolute inset-0 bg-black/40 group-hover:bg-black/20 transition-all"></div>
-                    <div class="play-btn absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-16 h-16 rounded-full bg-[#00C1FF]/90 flex items-center justify-center">
-                        <svg class="w-6 h-6 text-white ml-1" fill="currentColor" viewBox="0 0 24 24">
-                            <path d="M8 5v14l11-7z"/>
-                        </svg>
-                    </div>
-                    <span class="absolute bottom-3 right-3 bg-black/70 px-2 py-1 rounded text-xs text-white">--:--</span>
+<span class="absolute bottom-3 right-3 bg-black/70 px-2 py-1 rounded text-xs text-white">--:--</span>
                 </div>
                 <div class="p-6">
                     <span class="text-[#00C1FF] text-xs tracking-wider uppercase">分类</span>
@@ -376,16 +352,11 @@
             </div>
 
             <!-- 视频4 -->
-            <div class="video-card rounded-2xl overflow-hidden group" onclick="openVideo('https://jie-1410638926.cos.ap-guangzhou.myqcloud.com/1/视频4.mp4', '视频标题4')">
+            <div class="video-card rounded-2xl overflow-hidden group">
                 <div class="relative h-52 overflow-hidden">
                     <img src="https://images.unsplash.com/photo-1516035069371-29a1b244cc32?w=800&h=450&fit=crop" alt="视频封面4" class="w-full h-full object-cover">
                     <div class="absolute inset-0 bg-black/40 group-hover:bg-black/20 transition-all"></div>
-                    <div class="play-btn absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-16 h-16 rounded-full bg-[#00C1FF]/90 flex items-center justify-center">
-                        <svg class="w-6 h-6 text-white ml-1" fill="currentColor" viewBox="0 0 24 24">
-                            <path d="M8 5v14l11-7z"/>
-                        </svg>
-                    </div>
-                    <span class="absolute bottom-3 right-3 bg-black/70 px-2 py-1 rounded text-xs text-white">--:--</span>
+<span class="absolute bottom-3 right-3 bg-black/70 px-2 py-1 rounded text-xs text-white">--:--</span>
                 </div>
                 <div class="p-6">
                     <span class="text-[#00C1FF] text-xs tracking-wider uppercase">分类</span>
@@ -395,16 +366,11 @@
             </div>
 
             <!-- 视频5 -->
-            <div class="video-card rounded-2xl overflow-hidden group" onclick="openVideo('https://jie-1410638926.cos.ap-guangzhou.myqcloud.com/1/视频5.mp4', '视频标题5')">
+            <div class="video-card rounded-2xl overflow-hidden group">
                 <div class="relative h-52 overflow-hidden">
                     <img src="https://images.unsplash.com/photo-1535016120720-40c646be5580?w=800&h=450&fit=crop" alt="视频封面5" class="w-full h-full object-cover">
                     <div class="absolute inset-0 bg-black/40 group-hover:bg-black/20 transition-all"></div>
-                    <div class="play-btn absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-16 h-16 rounded-full bg-[#00C1FF]/90 flex items-center justify-center">
-                        <svg class="w-6 h-6 text-white ml-1" fill="currentColor" viewBox="0 0 24 24">
-                            <path d="M8 5v14l11-7z"/>
-                        </svg>
-                    </div>
-                    <span class="absolute bottom-3 right-3 bg-black/70 px-2 py-1 rounded text-xs text-white">--:--</span>
+<span class="absolute bottom-3 right-3 bg-black/70 px-2 py-1 rounded text-xs text-white">--:--</span>
                 </div>
                 <div class="p-6">
                     <span class="text-[#00C1FF] text-xs tracking-wider uppercase">分类</span>
@@ -414,16 +380,11 @@
             </div>
 
             <!-- 视频6 -->
-            <div class="video-card rounded-2xl overflow-hidden group" onclick="openVideo('https://jie-1410638926.cos.ap-guangzhou.myqcloud.com/1/视频6.mp4', '视频标题6')">
+            <div class="video-card rounded-2xl overflow-hidden group">
                 <div class="relative h-52 overflow-hidden">
                     <img src="https://images.unsplash.com/photo-1478720568477-152d9b164e26?w=800&h=450&fit=crop" alt="视频封面6" class="w-full h-full object-cover">
                     <div class="absolute inset-0 bg-black/40 group-hover:bg-black/20 transition-all"></div>
-                    <div class="play-btn absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-16 h-16 rounded-full bg-[#00C1FF]/90 flex items-center justify-center">
-                        <svg class="w-6 h-6 text-white ml-1" fill="currentColor" viewBox="0 0 24 24">
-                            <path d="M8 5v14l11-7z"/>
-                        </svg>
-                    </div>
-                    <span class="absolute bottom-3 right-3 bg-black/70 px-2 py-1 rounded text-xs text-white">--:--</span>
+<span class="absolute bottom-3 right-3 bg-black/70 px-2 py-1 rounded text-xs text-white">--:--</span>
                 </div>
                 <div class="p-6">
                     <span class="text-[#00C1FF] text-xs tracking-wider uppercase">分类</span>
@@ -433,16 +394,11 @@
             </div>
 
             <!-- 视频7 -->
-            <div class="video-card rounded-2xl overflow-hidden group" onclick="openVideo('https://jie-1410638926.cos.ap-guangzhou.myqcloud.com/1/视频7.mp4', '视频标题7')">
+            <div class="video-card rounded-2xl overflow-hidden group">
                 <div class="relative h-52 overflow-hidden">
                     <img src="https://images.unsplash.com/photo-1485846234645-a62644f84728?w=800&h=450&fit=crop" alt="视频封面7" class="w-full h-full object-cover">
                     <div class="absolute inset-0 bg-black/40 group-hover:bg-black/20 transition-all"></div>
-                    <div class="play-btn absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-16 h-16 rounded-full bg-[#00C1FF]/90 flex items-center justify-center">
-                        <svg class="w-6 h-6 text-white ml-1" fill="currentColor" viewBox="0 0 24 24">
-                            <path d="M8 5v14l11-7z"/>
-                        </svg>
-                    </div>
-                    <span class="absolute bottom-3 right-3 bg-black/70 px-2 py-1 rounded text-xs text-white">--:--</span>
+<span class="absolute bottom-3 right-3 bg-black/70 px-2 py-1 rounded text-xs text-white">--:--</span>
                 </div>
                 <div class="p-6">
                     <span class="text-[#00C1FF] text-xs tracking-wider uppercase">分类</span>
@@ -452,16 +408,11 @@
             </div>
 
             <!-- 视频8 -->
-            <div class="video-card rounded-2xl overflow-hidden group" onclick="openVideo('https://jie-1410638926.cos.ap-guangzhou.myqcloud.com/1/视频8.mp4', '视频标题8')">
+            <div class="video-card rounded-2xl overflow-hidden group">
                 <div class="relative h-52 overflow-hidden">
                     <img src="https://images.unsplash.com/photo-1524712245354-2c4e5e7121c0?w=800&h=450&fit=crop" alt="视频封面8" class="w-full h-full object-cover">
                     <div class="absolute inset-0 bg-black/40 group-hover:bg-black/20 transition-all"></div>
-                    <div class="play-btn absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-16 h-16 rounded-full bg-[#00C1FF]/90 flex items-center justify-center">
-                        <svg class="w-6 h-6 text-white ml-1" fill="currentColor" viewBox="0 0 24 24">
-                            <path d="M8 5v14l11-7z"/>
-                        </svg>
-                    </div>
-                    <span class="absolute bottom-3 right-3 bg-black/70 px-2 py-1 rounded text-xs text-white">--:--</span>
+<span class="absolute bottom-3 right-3 bg-black/70 px-2 py-1 rounded text-xs text-white">--:--</span>
                 </div>
                 <div class="p-6">
                     <span class="text-[#00C1FF] text-xs tracking-wider uppercase">分类</span>
@@ -470,16 +421,11 @@
                 </div>
             </div>
                         <!-- 视频9 -->
-            <div class="video-card rounded-2xl overflow-hidden group" onclick="openVideo('https://jie-1410638926.cos.ap-guangzhou.myqcloud.com/1/视频9.mp4', '视频标题9')">
+            <div class="video-card rounded-2xl overflow-hidden group">
                 <div class="relative h-52 overflow-hidden">
                     <img src="https://images.unsplash.com/photo-1517604931442-71053e3e2e3c?w=800&h=450&fit=crop" alt="视频封面9" class="w-full h-full object-cover">
                     <div class="absolute inset-0 bg-black/40 group-hover:bg-black/20 transition-all"></div>
-                    <div class="play-btn absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-16 h-16 rounded-full bg-[#00C1FF]/90 flex items-center justify-center">
-                        <svg class="w-6 h-6 text-white ml-1" fill="currentColor" viewBox="0 0 24 24">
-                            <path d="M8 5v14l11-7z"/>
-                        </svg>
-                    </div>
-                    <span class="absolute bottom-3 right-3 bg-black/70 px-2 py-1 rounded text-xs text-white">--:--</span>
+<span class="absolute bottom-3 right-3 bg-black/70 px-2 py-1 rounded text-xs text-white">--:--</span>
                 </div>
                 <div class="p-6">
                     <span class="text-[#00C1FF] text-xs tracking-wider uppercase">分类</span>
@@ -489,16 +435,11 @@
             </div>
 
             <!-- 视频10 -->
-            <div class="video-card rounded-2xl overflow-hidden group" onclick="openVideo('https://jie-1410638926.cos.ap-guangzhou.myqcloud.com/1/视频10.mp4', '视频标题10')">
+            <div class="video-card rounded-2xl overflow-hidden group">
                 <div class="relative h-52 overflow-hidden">
                     <img src="https://images.unsplash.com/photo-1440404653325-ab127d49abc1?w=800&h=450&fit=crop" alt="视频封面10" class="w-full h-full object-cover">
                     <div class="absolute inset-0 bg-black/40 group-hover:bg-black/20 transition-all"></div>
-                    <div class="play-btn absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-16 h-16 rounded-full bg-[#00C1FF]/90 flex items-center justify-center">
-                        <svg class="w-6 h-6 text-white ml-1" fill="currentColor" viewBox="0 0 24 24">
-                            <path d="M8 5v14l11-7z"/>
-                        </svg>
-                    </div>
-                    <span class="absolute bottom-3 right-3 bg-black/70 px-2 py-1 rounded text-xs text-white">--:--</span>
+<span class="absolute bottom-3 right-3 bg-black/70 px-2 py-1 rounded text-xs text-white">--:--</span>
                 </div>
                 <div class="p-6">
                     <span class="text-[#00C1FF] text-xs tracking-wider uppercase">分类</span>
@@ -508,16 +449,11 @@
             </div>
 
             <!-- 视频11 -->
-            <div class="video-card rounded-2xl overflow-hidden group" onclick="openVideo('https://jie-1410638926.cos.ap-guangzhou.myqcloud.com/1/视频11.mp4', '视频标题11')">
+            <div class="video-card rounded-2xl overflow-hidden group">
                 <div class="relative h-52 overflow-hidden">
                     <img src="https://images.unsplash.com/photo-1536440136628-849c177e76a1?w=800&h=450&fit=crop" alt="视频封面11" class="w-full h-full object-cover">
                     <div class="absolute inset-0 bg-black/40 group-hover:bg-black/20 transition-all"></div>
-                    <div class="play-btn absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-16 h-16 rounded-full bg-[#00C1FF]/90 flex items-center justify-center">
-                        <svg class="w-6 h-6 text-white ml-1" fill="currentColor" viewBox="0 0 24 24">
-                            <path d="M8 5v14l11-7z"/>
-                        </svg>
-                    </div>
-                    <span class="absolute bottom-3 right-3 bg-black/70 px-2 py-1 rounded text-xs text-white">--:--</span>
+<span class="absolute bottom-3 right-3 bg-black/70 px-2 py-1 rounded text-xs text-white">--:--</span>
                 </div>
                 <div class="p-6">
                     <span class="text-[#00C1FF] text-xs tracking-wider uppercase">分类</span>
@@ -527,16 +463,11 @@
             </div>
 
             <!-- 视频12 -->
-            <div class="video-card rounded-2xl overflow-hidden group" onclick="openVideo('https://jie-1410638926.cos.ap-guangzhou.myqcloud.com/1/视频12.mp4', '视频标题12')">
+            <div class="video-card rounded-2xl overflow-hidden group">
                 <div class="relative h-52 overflow-hidden">
                     <img src="https://images.unsplash.com/photo-1489599849927-2ee91cede3ba?w=800&h=450&fit=crop" alt="视频封面12" class="w-full h-full object-cover">
                     <div class="absolute inset-0 bg-black/40 group-hover:bg-black/20 transition-all"></div>
-                    <div class="play-btn absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-16 h-16 rounded-full bg-[#00C1FF]/90 flex items-center justify-center">
-                        <svg class="w-6 h-6 text-white ml-1" fill="currentColor" viewBox="0 0 24 24">
-                            <path d="M8 5v14l11-7z"/>
-                        </svg>
-                    </div>
-                    <span class="absolute bottom-3 right-3 bg-black/70 px-2 py-1 rounded text-xs text-white">--:--</span>
+<span class="absolute bottom-3 right-3 bg-black/70 px-2 py-1 rounded text-xs text-white">--:--</span>
                 </div>
                 <div class="p-6">
                     <span class="text-[#00C1FF] text-xs tracking-wider uppercase">分类</span>
@@ -546,16 +477,11 @@
             </div>
 
             <!-- 视频13 -->
-            <div class="video-card rounded-2xl overflow-hidden group" onclick="openVideo('https://jie-1410638926.cos.ap-guangzhou.myqcloud.com/1/视频13.mp4', '视频标题13')">
+            <div class="video-card rounded-2xl overflow-hidden group">
                 <div class="relative h-52 overflow-hidden">
                     <img src="https://images.unsplash.com/photo-1485846234645-a62644f84728?w=800&h=450&fit=crop" alt="视频封面13" class="w-full h-full object-cover">
                     <div class="absolute inset-0 bg-black/40 group-hover:bg-black/20 transition-all"></div>
-                    <div class="play-btn absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-16 h-16 rounded-full bg-[#00C1FF]/90 flex items-center justify-center">
-                        <svg class="w-6 h-6 text-white ml-1" fill="currentColor" viewBox="0 0 24 24">
-                            <path d="M8 5v14l11-7z"/>
-                        </svg>
-                    </div>
-                    <span class="absolute bottom-3 right-3 bg-black/70 px-2 py-1 rounded text-xs text-white">--:--</span>
+<span class="absolute bottom-3 right-3 bg-black/70 px-2 py-1 rounded text-xs text-white">--:--</span>
                 </div>
                 <div class="p-6">
                     <span class="text-[#00C1FF] text-xs tracking-wider uppercase">分类</span>
@@ -565,16 +491,11 @@
             </div>
 
             <!-- 视频14 -->
-            <div class="video-card rounded-2xl overflow-hidden group" onclick="openVideo('https://jie-1410638926.cos.ap-guangzhou.myqcloud.com/1/视频14.mp4', '视频标题14')">
+            <div class="video-card rounded-2xl overflow-hidden group">
                 <div class="relative h-52 overflow-hidden">
                     <img src="https://images.unsplash.com/photo-1518676590629-3dcbd9c5a5c9?w=800&h=450&fit=crop" alt="视频封面14" class="w-full h-full object-cover">
                     <div class="absolute inset-0 bg-black/40 group-hover:bg-black/20 transition-all"></div>
-                    <div class="play-btn absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-16 h-16 rounded-full bg-[#00C1FF]/90 flex items-center justify-center">
-                        <svg class="w-6 h-6 text-white ml-1" fill="currentColor" viewBox="0 0 24 24">
-                            <path d="M8 5v14l11-7z"/>
-                        </svg>
-                    </div>
-                    <span class="absolute bottom-3 right-3 bg-black/70 px-2 py-1 rounded text-xs text-white">--:--</span>
+<span class="absolute bottom-3 right-3 bg-black/70 px-2 py-1 rounded text-xs text-white">--:--</span>
                 </div>
                 <div class="p-6">
                     <span class="text-[#00C1FF] text-xs tracking-wider uppercase">分类</span>
@@ -584,16 +505,11 @@
             </div>
 
             <!-- 视频15 -->
-            <div class="video-card rounded-2xl overflow-hidden group" onclick="openVideo('https://jie-1410638926.cos.ap-guangzhou.myqcloud.com/1/视频15.mp4', '视频标题15')">
+            <div class="video-card rounded-2xl overflow-hidden group">
                 <div class="relative h-52 overflow-hidden">
                     <img src="https://images.unsplash.com/photo-1478720568477-152d9b164e26?w=800&h=450&fit=crop" alt="视频封面15" class="w-full h-full object-cover">
                     <div class="absolute inset-0 bg-black/40 group-hover:bg-black/20 transition-all"></div>
-                    <div class="play-btn absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-16 h-16 rounded-full bg-[#00C1FF]/90 flex items-center justify-center">
-                        <svg class="w-6 h-6 text-white ml-1" fill="currentColor" viewBox="0 0 24 24">
-                            <path d="M8 5v14l11-7z"/>
-                        </svg>
-                    </div>
-                    <span class="absolute bottom-3 right-3 bg-black/70 px-2 py-1 rounded text-xs text-white">--:--</span>
+<span class="absolute bottom-3 right-3 bg-black/70 px-2 py-1 rounded text-xs text-white">--:--</span>
                 </div>
                 <div class="p-6">
                     <span class="text-[#00C1FF] text-xs tracking-wider uppercase">分类</span>
@@ -735,6 +651,22 @@
                     document.getElementById('mobile-menu').classList.add('hidden');
                 }
             });
+        });
+    </script>
+
+    <script>
+        // 视频卡片 hover 自动播放
+        document.querySelectorAll('.video-card').forEach(card => {
+            const video = card.querySelector('video');
+            if (video) {
+                card.addEventListener('mouseenter', () => {
+                    video.play().catch(() => {}); // 忽略可能的错误
+                });
+                card.addEventListener('mouseleave', () => {
+                    video.pause();
+                    video.currentTime = 0; // 可选：移出时重置视频
+                });
+            }
         });
     </script>
 </body>
